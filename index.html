@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTRATION FORM</title>
+	<style type="text/css">
+		.x{
+			margin: 100px 200px;
+			background: yellow;
+			position: fixed;
+		}
+		.y{
+			margin:10px 400px;
+			
+		}
+		.z{
+			background: tomato;
+			height: 50px;
+			width: 1080px;
+			font-size: 30px;
+			font-family:comic sans ms;
+
+		}
+	</style>
+
+	<script type="text/javascript">
+		function empty(){
+			var n,a,u,p,m,e,nn;
+			n=document.f.name.value;
+			a=document.f.address.value;
+			u=document.f.username.value;
+			p=document.f.password.value;
+			m=document.f.mobile.value;
+			e=document.f.email.value;
+
+			if(n=="" || a=="" || u==""|| p=="" ||m=="" || e=="")
+				alert("No filed can be left empty");
+			else
+			{
+				if(n.length<5)
+				alert("Name must contain 5 character");
+
+				if(p.length<6 || p.indexOf("_")<0)
+					alert("Password must contain 6 character and '-' symbol");
+				if(m.length!=10 || isNaN(m))
+					alert("Mobile number must be digit and length 10");
+
+				if(e.indexOf("@")<0)
+					alert("Email not in proper format");
+
+			}
+
+
+		}
+
+		function cap() {
+			
+			nn=document.getElementById("name")
+			nn.value=nn.value.toUpperCase();
+		}
+	</script>
+</head>
+<body bgcolor="#87CEFA">
+	<form class="x" name="f">
+		<fieldset><legend><font face="Comic sans ms" size="5px"> REGISTRATION FORM </font></legend>
+		<table class="y" cellpadding="10px">
+			<tr>
+				<marquee behaivor="alternate" class="z">STUDENT REGISTRATION FORM
+			</tr>
+			<tr>
+				<td>Name </td>
+				<td colspan="2"><input type="text" name="name" id="name" placeholder="Enter your name" onblur="cap()"></td>
+			</tr>
+
+			<tr>
+				<td>Address </td>
+				<td><textarea rows="10" cols="20" placeholder="Enter Address" name="address" id="address"></textarea></td>
+			</tr>
+
+			<tr>
+				<td>Username </td>
+				<td><input type="text" name="username" id="username"> </td>
+			</tr>
+
+			<tr>
+				<td>Password </td>
+				<td><input type="Password" name="password" id="password" placeholder=""></td>
+			</tr>
+
+			<tr>
+				<td>Mobile No </td>
+				<td><input type="text" name="mobile" id="mobile" placeholder=""></td>
+			</tr>
+
+			<tr>
+				<td>Email </td>
+				<td><input type="text" name="email" id="email" placeholder=""></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" name="submit" id="submit" value="submit" onclick="return empty();" ></td>
+				<td><input type="reset" name="reset" id="reset"></td>
+			</tr>
+
+		</table>
+		</fieldset>
+	</form>
+
+</body>
+</html>
